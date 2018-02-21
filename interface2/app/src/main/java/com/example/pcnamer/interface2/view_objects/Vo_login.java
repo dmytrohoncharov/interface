@@ -16,7 +16,7 @@ import java.util.zip.Inflater;
 
 public class Vo_login extends ViewObject{
     public Vo_login(Context ctx){
-        Log.e("Tag","ZOPA");
+        Log.e("Tag","ZOPA2");
         LayoutInflater.from(ctx).inflate(R.layout.vo_text_field, null);
     }
     @Override
