@@ -23,12 +23,8 @@ public class ViewFieldText extends ViewText {
 
     @Override
     public String getObjectName(){
-        return "ViewFieldText";
+        return "field text";
     }
 
-    @Override
-    public int getLayout(){
-        return R.layout.view_field_text_layout;
-    }
 
 }

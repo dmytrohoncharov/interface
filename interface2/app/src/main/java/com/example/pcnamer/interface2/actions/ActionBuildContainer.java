@@ -1,5 +1,6 @@
 package com.example.pcnamer.interface2.actions;
 
+import com.example.pcnamer.interface2.view_objects.ViewObject;
 import com.example.pcnamer.interface2.view_objects.containers.Div;
 
 /**
@@ -9,9 +10,9 @@ import com.example.pcnamer.interface2.view_objects.containers.Div;
 public class ActionBuildContainer extends AppAction {
 
     public int level;
-    public  ActionBuildContainer(int level){
+    public  ActionBuildContainer(int level, ViewObject[] objects){
         super();
-        Div newContainer = new Div(level);
+       // Div newContainer = new Div(level, objects);
     }
 
     @Override

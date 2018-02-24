@@ -21,11 +21,7 @@ public class ViewText extends ViewObject {
 
     @Override
     public String getObjectName(){
-        return "View Text";
+        return "text";
     }
 
-    @Override
-    public int getLayout(){
-        return R.layout.view_text_layout;
-    }
 }
