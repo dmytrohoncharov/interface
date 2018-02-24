@@ -1,5 +1,6 @@
 package com.example.pcnamer.interface2.view_objects.containers;
 
+import com.example.pcnamer.interface2.R;
 import com.example.pcnamer.interface2.view_objects.ViewObject;
 
 /**
@@ -14,14 +15,18 @@ public class Div extends ViewObject {
         super();
         this.level = level;
     }
+    public int getLevel(){
+        return this.level;
+    }
 
     @Override
-    public String getObjectName(){
+    public String getObjectName() {
         return "Div created, level = " + this.level;
     }
 
-    public int getLevel(){
-        return this.level;
+    @Override
+    public int getLayout(){
+        return R.layout.div_layout;
     }
 
 }
