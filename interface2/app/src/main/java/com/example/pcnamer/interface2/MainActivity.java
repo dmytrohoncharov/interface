@@ -3,14 +3,12 @@ package com.example.pcnamer.interface2;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import com.example.pcnamer.interface2.actions.ActionBuildContainer;
-import com.example.pcnamer.interface2.view_objects.containers.Div;
-import com.example.pcnamer.interface2.view_objects.views.ViewFieldText;
+import com.example.pcnamer.interface2.view_objects.views.VOTextView;
+import com.example.pcnamer.interface2.view_objects.views.ViewObject;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,35 +17,43 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ViewFieldText login = new ViewFieldText("LOGIN", "Enter login");
-        ViewFieldText pass = new ViewFieldText("PASSWORD", "Enter password");
-        ViewFieldText array[] = {login, pass};
+        final LinearLayout main_layout = (LinearLayout) findViewById(R.id.main_layout);
+        final LinearLayout bot_layout = (LinearLayout) findViewById(R.id.bottom_layout);
+        final LinearLayout top_layout = (LinearLayout) findViewById(R.id.top_bar);
 
-        Context ctx = getApplicationContext();
-        Div startDiv = new Div(0, array, ctx);
-        View view = startDiv.getContainer();
+        AppContext ctx = new AppContext() {
+            @Override
+            public Context getContext() {
+                return getApplicationContext();
+            }
+            @Override
+            public LinearLayout getTopLayout(){
+                return top_layout;
+            }
+            @Override
+            public LinearLayout getMainLayout(){
+                return main_layout;
+            }
+            @Override
+            public LinearLayout getBotLayout(){
+                return bot_layout;
+            }
+        };
 
-      // int a = login.getLayout();
-        LinearLayout content = findViewById(R.id.lay);
-        content.addView(view);
+       // ViewObject a = new ViewObject(ctx, R.layout.vo_text_view);
+        VOTextView a = new VOTextView(ctx);
+        //TextView text = (TextView)
+        //Controller ctr = new Controller(ctx);
+        //ctr.create("loginField");
 
-      // LayoutInflater factory = LayoutInflater.from(this);
 
-      // View myView = factory.inflate(a, null);
-        // 4isto twoj test kod
-        ViewFieldText testField = new ViewFieldText("Sania pidor", "da ili nit");
-        int b = login.getLayout();
-        LayoutInflater factory = LayoutInflater.from(this);
-        View myView = factory.inflate(b, null);
-        content.addView(myView);
-       // class.create("textField")
 
-        //ActionBuildContainer test = new ActionBuildContainer(1);
-        //Vo_login log = new Vo_login(ctx);
-        //Log.e("tag", log.setXml());
+      //  main_layout.addView(a);
 
-        // два вью
 
+
+
+        //Context ctx = getApplicationContext();
     }
 }
 

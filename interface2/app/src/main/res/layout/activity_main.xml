@@ -7,21 +7,43 @@
     tools:context="com.example.pcnamer.interface2.MainActivity">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:id="@+id/lay"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/common_google_signin_btn_text_light_focused"
+            android:orientation="horizontal"
+            android:id="@+id/top_bar">
+        </LinearLayout>
 
-            android:id="@+id/logo"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_gravity="center"
-            app:srcCompat="@mipmap/ic_launcher"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/main_layout"/>
+        </ScrollView>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/common_google_signin_btn_text_light_focused">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/bottom_layout">
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>
